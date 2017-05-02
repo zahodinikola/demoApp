@@ -1,8 +1,9 @@
 'use strict'
 
-eventsApp.controller("EventController", 
+eventsApp.controller("EventController", ["$scope", 
     function EventController($scope){
 
+        $scope.orderby = "name";
         $scope.snippet = '<span style="color: red"> hi there </span>';
         $scope.boolValue = false;
         $scope.mystyle = {color: 'red'};
@@ -10,7 +11,7 @@ eventsApp.controller("EventController",
         $scope.buttonDisabled = true;
         $scope.event = {
             name: "Angular Boot Camp",
-            date: "1/1/2013",
+            date: 1493667543252,
             time: "10:30 am",
             location: {
                 address: "Google Headquarters",
@@ -20,9 +21,9 @@ eventsApp.controller("EventController",
             imageUrl: "./img/angularjs-logo.png",
             sessions: [
                 {
-                    name: "Directives masterclass",
+                    name: "Directives masterclass introductory",
                     creatorName: "Bob Smith",
-                    duration: "1 hr",
+                    duration: 2,
                     level: "Advanced",
                     abstract: "In this session you will learn the ins and outs of direct....",
                     upVoteCount: 0
@@ -30,7 +31,7 @@ eventsApp.controller("EventController",
                 {
                     name: "Scopes for fun and profit",
                     creatorName: "John Doe",
-                    duration: "30 mins",
+                    duration: 1,
                     level: "Introductory",
                     abstract: "This session will take a closer look at scopes. Learn.....",
                     upVoteCount: 0
@@ -38,7 +39,7 @@ eventsApp.controller("EventController",
                 {
                     name: "Well behaved controllers",
                     creatorName: "Jane Doe",
-                    duration: "2 hours",
+                    duration: 4,
                     level: "Intermediate",
                     abstract: "Controllers are the beginning if everything Angular does.....",
                     upVoteCount: 0
@@ -52,4 +53,4 @@ eventsApp.controller("EventController",
             session.upVoteCount--;
         }
     }
-);
+]);
