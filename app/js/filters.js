@@ -4,14 +4,30 @@ eventsApp.filter('durations', function() {
     return function(duration) {
         switch (duration) {
             case 1:
-                return "half hour";
+            return "Half hour";
             case 2:
-                return "hour";
+            return "1 hour";
             case 3:
-                return "half day";
+            return "Half day";
             case 4:
-                return "day";
-            }
+            return "Full day";
         }
     }
-)
+})
+
+
+// eventsApp.filter('durations', function() {
+//     return function(duration) {
+//         switch (duration) {
+//             case 1:
+//                 return "half hour";
+//             case 2:
+//                 return "hour";
+//             case 3:
+//                 return "half day";
+//             case 4:
+//                 return "day";
+//             }
+//         }
+//     }
+// )
