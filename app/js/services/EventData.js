@@ -1,4 +1,4 @@
-eventsApp.factory("eventData", function($http) {
+eventsApp.factory("eventData", function($resource) {
     return {
         // event: {
         //         name: "Angular Boot Camp",
@@ -38,7 +38,7 @@ eventsApp.factory("eventData", function($http) {
         //         ]
         //     },
         getEvent:   function() {
-                        return $http({method: 'GET', url: './data/event/1.json'});
+                        return $resource('./data/event/:id', {id:'@id'}).get({id:1});
                     }
     };
 });
