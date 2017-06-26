@@ -10,11 +10,11 @@ eventsApp.controller('EventController',
             $scope.sortOrder = 'upVoteCount';
             $scope.buttonDisabled = true;
             
-            eventData.getEvent()
-                .$promise.then (
-                        function(event) {$scope.event = event; console.log(event); },
-                        function(response) {console.log(response);}
-                );
+            $scope.event = eventData.getEvent();
+                // .$promise.then (
+                //         function(event) {$scope.event = event; console.log(event); },
+                //         function(response) {console.log(response);}
+                // );
                 
         
 

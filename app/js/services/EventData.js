@@ -38,7 +38,7 @@ eventsApp.factory("eventData", function($resource) {
         //         ]
         //     },
         getEvent:   function() {
-                        return $resource('./data/event/:id', {id:'@id'}).get({id:1});
+                        return $resource('/data/event/:id', {id:'@id'}).get({id:1});
                     }
     };
 });
