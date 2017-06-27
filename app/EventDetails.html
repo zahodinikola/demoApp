@@ -17,6 +17,8 @@
         </div>
         <div ng-controller="EventController" style="padding-left: 20px; padding-right: 20px">
             <img ng-src="{{event.imageUrl}}" alt="{{event.name}}" />
+            <button type="button" class="btn btn-primary" ng-click="scrollToSession()">Scroll</button>
+            
             <div class="row">
                 <div class="spann11">
                     <h2>{{event.name | uppercase}}</h2>
@@ -67,7 +69,7 @@
             </select>
 
             <ul class="thumbnails">
-                <li ng-repeat="session in event.sessions | orderBy: sortOrder | filter: match" ng-class-odd="myclass">
+                <li ng-repeat="session in event.sessions | orderBy: sortOrder | filter: match" ng-class-odd="myclass" id= "session{{session.id}}">
                     
                     <div class="row session">
                         <div class="span0 well votingWidget">
@@ -95,9 +97,10 @@
      </div>
     </div>
 
-    <script src="./lib/angular/angular-resource.js"></script>
+    
     <script src="./lib/bootstrap.min.js"></script>
     <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular/angular-resource.js"></script>
     <script src="./lib/angular/angular-sanitize.js"></script>
     <script src="./lib/jquery.min.js"></script>
     <script src="./lib/underscore-1.4.4.min.js"></script>
