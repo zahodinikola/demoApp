@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="eventsApp">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/app.css" />
+        <title> Cookie Store </title>
+    </head>
+    <body>
+        <div class="container">
+            <div ng-controller="CookieStoreSampleController" style="padding: 1%">
+
+                <button class="btn" ng-click="saveEventToCookie('4')">Save cookie</button>
+                <button class="btn" ng-click="getEventFromCookie()">Get cookie</button>
+                <button class="btn" ng-click="removeEventCookie()">Delete cookie</button>
+                <br />
+                {{event}}
+                {{event.id}}
+                {{event.name}}
+
+            </div>
+        </div>
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular/angular-resource.js"></script>
+    <script src="./lib/angular/angular-cookies.js"></script>
+    <script src="./lib/angular/angular-locale_es.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/controllers/CookieStoreSampleController.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    </body>
+    
+
