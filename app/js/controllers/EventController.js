@@ -1,30 +1,21 @@
 'use strict'
 
 eventsApp.controller('EventController',
-        function EventController($scope, eventData, $log, $anchorScroll) {
+        function EventController($scope, eventData, $routeParams, $route) {
 
-            $scope.snippet = "<span style='color: red'>hi there</span>";
-            $scope.boolValue = false;
-            $scope.mystyle = {color: "red"};
-            $scope.myclass = "blue";
             $scope.sortOrder = 'upVoteCount';
-            $scope.buttonDisabled = true;
-            
-            eventData.getEvent()
-                .$promise
-                .then(function(event) {$scope.event = event; console.log(event); })
-                .catch(function(response) {console.log(response);}
-                );
-                
-        
-
+            $scope.event = eventData.getEvent($routeParams.eventId);
+            console.log($route.current.params.foo);
+ 
             $scope.upVoteSession = function(session) {
                     session.upVoteCount++;
                 };
             $scope.downVoteSession = function(session) {
                     session.upVoteCount--;
                 };
-            $scope.scrollToSession = function() {
-                    $anchorScroll();
-            }    
+
+            $scope.reload = function() {
+                $route.reload();
+                };
+   
         })
